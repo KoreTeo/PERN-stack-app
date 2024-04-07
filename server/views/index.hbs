@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Склад</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="page">
+  <main class="content">
+   <h1 class="main-heading">Склад</h1>
+   <section class="content__section section-create-product">
+    <form class="create-form" method="POST" action="/product/create">
+    <div class="input-container">
+      <label>Название</label>
+      <input required name="product_name">
+    </div>
+    <div class="input-container">
+      <label>ID поставщика</label>
+      <input name="supplier_id" type="number">
+    </div>
+    <div class="input-container">
+      <label>ID категория</label>
+      <input name="category_id" type="number"> 
+    </div>
+    <div class="input-container">
+            <label>Количество в единице</label>
+      <input name="quantity_per_unit"> 
+    </div>
+    <div class="input-container">
+            <label>Цена за единицу</label>
+      <input name="unit_price" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Единиц на складе</label>
+      <input name="units_in_stock" type="number"> 
+    </div>
+    <div class="input-container">
+            <label>Единиц в заказах</label>
+      <input name="units_on_order" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Уровень повторного заказа</label>
+      <input name="reorder_level" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Discontinued</label>
+      <input required name="discontinued" type="number" min="0" max="1" > 
+    </div>
+      <input class="button" type="submit" value="Создать">
+    </form>
+   </section>
+   <section class="content__section section-products">
+    <h2 class="section-heading">Список продуктов</h2>
+    <form class="filter-form" method="POST" action="/filter">
+      <h3>Поиск по</h3>
+      <div class="input-container">
+      <label>Название</label>
+      <input name="product_name">
+      </div>
+      <div class="input-container">
+        <label>ID категория</label>
+        <input name="category_id" type="number"> 
+      </div>
+      <div class="input-container">
+        <label>Discontinued</label>
+        <input name="discontinued" type="number" min="0" max="1"> 
+      </div>
+      <input class="button" type="submit" value="Искать">
+    </form>
+    <div class="products-container">
+    {{#each products}}
+      <div class="product-item">
+        <h4>{{this.product_name}} ({{this.product_id}})</h4>
+        <p>{{this.supplier_id}} / {{this.category_id}}</p>
+        <p>{{this.quantity_per_unit}} / {{this.unit_price}} $</p>
+        <p>{{this.units_in_stock}} / {{this.units_on_order}}</p>
+        <p>{{this.reorder_level}} / {{this.discontinued}}</p>
+        <form class="delete-form" method="POST" action="/product/{{this.product_id}}">
+          <input type="submit" class="button" value="Удалить">
+        </form>
+      </div>
+    {{/each}}
+    </div> 
+   </section>
+  </main>
+  <script src="./public/scripts/script.js"></script>
+</body>
+</html>
