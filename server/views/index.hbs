@@ -1,133 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Доступная страница про доступность</title>
-    </head>
-
-    <body>
-        <header>
-            <details>
-                <summary>Эта страница про доступность в веб (и вообще)</summary>
-                <p>
-                    Одна из характеристик современного сайта — доступность
-                    (accessibility). Это означает, что сайтом могут без проблем
-                    пользоваться люди с инвалидностью. В этой статье разберёмся с
-                    определениями доступности и связанных терминов, а также из чего
-                    состоит доступность в вебе, почему она важна и кому помогает, с какими
-                    трудностями сталкивается, какими инструментами достигается и какие
-                    законы её регулируют.
-                </p>
-            </details>
-        </header>
-
-        <div>
-            <h2>
-                Вместо длинного слова «доступность» используют нумероним «a11y».
-                В нём зашифровано исходное слово «accessibility». Оно начинается
-                с a, заканчивается на y, а между первой и последней буквами
-                находится ещё 11 других. Читается просто — «а́лли» («ally») или
-                «эй-элевен-уай» («a-eleven-y»).
-            </h2>
-
-            <img
-                src="https://doka.guide/a11y/chto-takoe-a11y/images/0-696w.webp"
-                alt="В слове «Accessibility» выделено цветом и пронумеровано 11 букв между первым и последним знаками. Буквы объединены фигурной скобкой, под ней подпись «a11y»."
-            />
-
-            <section>
-                <h2>Принципы</h2>
-                <p>
-                    Веб-доступность опирается на четыре принципа. Они описывают,
-                    какими должны быть веб-интерфейсы и их отдельные элементы и
-                    контент.
-                </p>
-                <ul>
-                    <li>
-                        Воспринимаемость (Perceivable) — интерфейс можно
-                        воспринимать разными органами чувств, например, глазами,
-                        ушами и кожей.
-                    </li>
-                    <li>
-                        Управляемость (Operable) — с интерфейсом можно
-                        взаимодействовать разными способами, к примеру, с
-                        помощью клавиатуры или голосом.
-                    </li>
-                    <li>
-                        Понятность (Understandable) — интерфейс и контент легко
-                        понять, ясно как взаимодействовать с интерактивными
-                        элементами.
-                    </li>
-                    <li>
-                        Устойчивость (Robust) — интерфейс соответствует
-                        техническим спецификациям и работает на разных
-                        устройствах, в разных браузерах и с разными
-                        вспомогательными технологиями.
-                    </li>
-                </ul>
-            </section>
-
-            <h2>Три очень полезных статьи</h2>
-
-            <section>
-                <h3>
-                    Как установить язык сайта и его отдельных фрагментов, и
-                    почему это важно.
-                </h3>
-                <a aria-label="Язык сайта и содержимого" href="https://doka.guide/a11y/site-language/"
-                    >Язык сайта и содержимого</a
-                >
-            </section>
-
-            <section>
-                <h3>
-                    Разбираемся, как описывать картинки так, чтобы были довольны
-                    даже поисковые роботы.
-                </h3>
-                <a aria-label="Как описывать картинки" href="https://doka.guide/a11y/how-to-describe-pictures/"
-                    >Как описывать картинки</a
-                >
-            </section>
-
-
-            <section>
-                <h3>
-                    Рекомендации по созданию доступных форм: валидация, элементы
-                    управления и их атрибуты.
-                </h3>
-                <a aria-label="Доступные формы" href="https://doka.guide/a11y/accessible-forms/"
-                    >Доступные формы</a
-                >
-            </section>
-
-            <section>
-                <h2>
-                    В этом разделе находится модальное окно в котором есть форма
-                    обратной связи!
-                </h2>
-
-                <h3>Попробуйте его открыть, пользуясь скринридером</h3>
-                <button aria-label="Открыть как модалку" type="button" onclick="window.myDialog.showModal()">
-                    Открыть как модалку
-                </button>
-                <dialog id="myDialog" aria-labelledby="dialog-name">
-                    <h3 id="dialog-name">Я форма обратной связи!</h3>
-                    🖖 Живи долго и процветай!
-                    <form method="dialog" aria-labelledby="dialog-name">
-                        <input type="text" aria-label="Введите имя" aria-placeholder="Ваше имя"/>
-                        <input type="email" aria-label="Введите почту" aria-placeholder="Ваша почта"/>
-                        <button aria-label="Закрыть (мы с вами свяжемся)" type="submit">Закрыть (мы с вами свяжемся)</button>
-                    </form>
-                </dialog>
-            </section>
-        </div>
-
-        <footer>
-            <a aria-label="Оригинальная статья на Доке" href="https://doka.guide/a11y/chto-takoe-a11y/"
-                >Оригинальная статья на Доке</a
-            >
-        </footer>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Склад</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="page">
+  <main class="content">
+   <h1 class="main-heading">Склад</h1>
+   <section class="content__section section-create-product">
+    <form class="create-form" method="POST" action="/product/create">
+    <div class="input-container">
+      <label>Название</label>
+      <input required name="product_name">
+    </div>
+    <div class="input-container">
+      <label>ID поставщика</label>
+      <input name="supplier_id" type="number">
+    </div>
+    <div class="input-container">
+      <label>ID категория</label>
+      <input name="category_id" type="number"> 
+    </div>
+    <div class="input-container">
+            <label>Количество в единице</label>
+      <input name="quantity_per_unit"> 
+    </div>
+    <div class="input-container">
+            <label>Цена за единицу</label>
+      <input name="unit_price" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Единиц на складе</label>
+      <input name="units_in_stock" type="number"> 
+    </div>
+    <div class="input-container">
+            <label>Единиц в заказах</label>
+      <input name="units_on_order" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Уровень повторного заказа</label>
+      <input name="reorder_level" type="number"> 
+    </div>
+    <div class="input-container">
+      <label>Discontinued</label>
+      <input required name="discontinued" type="number" min="0" max="1" > 
+    </div>
+      <input class="button" type="submit" value="Создать">
+    </form>
+   </section>
+   <section class="content__section section-products">
+    <h2 class="section-heading">Список продуктов</h2>
+    <form class="filter-form" method="POST" action="/filter">
+      <h3>Поиск по</h3>
+      <div class="input-container">
+      <label>Название</label>
+      <input name="product_name">
+      </div>
+      <div class="input-container">
+        <label>ID категория</label>
+        <input name="category_id" type="number"> 
+      </div>
+      <div class="input-container">
+        <label>Discontinued</label>
+        <input name="discontinued" type="number" min="0" max="1"> 
+      </div>
+      <input class="button" type="submit" value="Искать">
+    </form>
+    <div class="products-container">
+    {{#each products}}
+      <div class="product-item">
+        <h4>{{this.product_name}} ({{this.product_id}})</h4>
+        <p>{{this.supplier_id}} / {{this.category_id}}</p>
+        <p>{{this.quantity_per_unit}} / {{this.unit_price}} $</p>
+        <p>{{this.units_in_stock}} / {{this.units_on_order}}</p>
+        <p>{{this.reorder_level}} / {{this.discontinued}}</p>
+        <form class="delete-form" method="POST" action="/product/{{this.product_id}}">
+          <input type="submit" class="button" value="Удалить">
+        </form>
+      </div>
+    {{/each}}
+    </div> 
+   </section>
+  </main>
+  <script src="./public/scripts/script.js"></script>
+</body>
 </html>
